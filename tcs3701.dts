@@ -1,0 +1,13 @@
+
+#include <dt-bindings/gpio/gpio.h>
+
+&i2c_bus0 {
+    status = "okay";
+    clock-frequency = <100000>;
+
+    tcs3701: tcs3701@39 {
+        compatible = "ams,tcs3701";
+        reg = <0x39>;
+        gpio-irq = <&gpio_chip3 7 GPIO_ACTIVE_HIGH>;
+    };
+};
